@@ -16,10 +16,10 @@ As a Software Analyst, I want to collect web links (URL’s) from a given initia
 
 ## Commentaries for the solution
 Required libs (installed with *pip*):
-|    lib | version |
-| ------ | ------- |
-| scrapy | 2.3.0   |
-| scrapy | 2.6.0   |
+|     lib | version |
+| ------- | ------- |
+| scrapy  | 2.3.0   |
+| sqlite3 | 2.6.0   |
 
 Usage:
 > scrapy crawl mainSpider -a starting_url=https://tecnoblog.net
