@@ -2,8 +2,8 @@
 As a Software Analyst, I want to collect web links (URL’s) from a given initial web link (URL)
 
 ## Requirements
-- [ ] The app needs to receive an URL;
-- [ ] The app needs to find all links inside this given URL;
+- [X] The app needs to receive an URL;
+- [X] The app needs to find all links inside this given URL;
 - [ ] The app needs to save these links found in the database (SQL or No-SQL)
 - [ ] The app needs to list these links saved in the database.
 - [ ] After collecting all links from the initial URL. Collect from the newly found links. I mean, the system gets the first link saved, and start the process (get all links and keep on the database). Follow does it to the second, third and successively until the last link saved and tracked.
@@ -15,4 +15,13 @@ As a Software Analyst, I want to collect web links (URL’s) from a given initia
 - [ ] Your code needs to run with containers, with in IBM Cloud;
 
 ## Commentaries for the solution
-In progress
+Required libs (installed with *pip*):
+|    lib | version |
+| ------ | ------- |
+| scrapy | 2.3.0   |
+| scrapy | 2.6.0   |
+
+Usage:
+> scrapy crawl mainSpider -a starting_url=https://tecnoblog.net
+
+Currently using *DEPTH_LIMIT = 1* for DEBUG.
