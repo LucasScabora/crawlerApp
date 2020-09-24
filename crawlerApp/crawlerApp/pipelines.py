@@ -8,6 +8,8 @@ from urllib.parse import urlparse
 from itemadapter import ItemAdapter
 from scrapy.exceptions import DropItem
 
+
+
 class CrawlerappPipeline:	
     # Opens a database connection (to do)
     def open_spider(self, spider):

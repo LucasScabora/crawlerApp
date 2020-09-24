@@ -16,6 +16,10 @@ DEPTH_LIMIT = 1
 
 LOG_LEVEL = 'ERROR'
 
+# Execute the crawler in a BFO order (according to FAQ)
+SCHEDULER_DISK_QUEUE = 'scrapy.squeues.PickleFifoDiskQueue'
+SCHEDULER_MEMORY_QUEUE = 'scrapy.squeues.FifoMemoryQueue'
+
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
 #USER_AGENT = 'crawlerApp (+http://www.yourdomain.com)'
 

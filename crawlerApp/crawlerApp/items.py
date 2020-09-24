@@ -5,7 +5,7 @@
 
 import scrapy
 
+# Processes both the link and its aquisition date
 class CrawlerappItem(scrapy.Item):
-    # Receives a link and its aquisition date
     link = scrapy.Field()
     date = scrapy.Field()

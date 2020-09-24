@@ -2,7 +2,7 @@ import scrapy
 
 from datetime              import datetime
 from crawlerApp.items      import CrawlerappItem
-from scrapy.spiders        import CrawlSpider, Rule
+from scrapy.spiders        import CrawlSpider
 from scrapy.linkextractors import LinkExtractor
 
 # Main Spider Class
@@ -18,7 +18,7 @@ class mainSpider(CrawlSpider):
 
     # Defines starting point (input parameter: -a starting_url=<YOUR URL>)
     def start_requests(self):
-        # If a starting URL was not informed, uses IBM's webpage
+        # Default starting URL: IBM's webpage
         if self.starting_url is None:
             yield scrapy.Request('https://www.ibm.com/', self.parse)
         else: 
@@ -27,14 +27,11 @@ class mainSpider(CrawlSpider):
     
     # Parses each web page found
     def parse(self, response):
-        # Acquires the fields (current link and date)
+        # Mounts the item and return it
         currlink = response.url
         currdate = datetime.now()
-
-        # Mount and return the item
         yield CrawlerappItem(link = currlink, date = currdate)
 
-        # Go to next URL
+        # Goes to next URLs
         for link in self.link_extractor.extract_links(response):
-            if link is not None:
-                yield response.follow(link, self.parse)
+            yield response.follow(link, self.parse)

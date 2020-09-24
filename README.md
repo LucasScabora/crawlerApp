@@ -9,7 +9,7 @@ As a Software Analyst, I want to collect web links (URL’s) from a given initia
 - [ ] After collecting all links from the initial URL. Collect from the newly found links. I mean, the system gets the first link saved, and start the process (get all links and keep on the database). Follow does it to the second, third and successively until the last link saved and tracked.
 
 ## Extra
-- [ ] Your code needs to be integrated with git on your GitHub personal profile;
+- [X] Your code needs to be integrated with git on your GitHub personal profile;
 - [ ] Your code needs to contain unit testing;
 - [ ] Your code needs to be served on the IBM Cloud;
 - [ ] Your code needs to run with containers, with in IBM Cloud;
@@ -27,3 +27,4 @@ Usage example:
 Other commentaries:
 - Currently using *DEPTH_LIMIT = 1* for DEBUG.
 - Using a indexed column with url hash values (MD5) to validate duplicity
+- Changed the URL processing order to BFO using: https://docs.scrapy.org/en/latest/faq.html

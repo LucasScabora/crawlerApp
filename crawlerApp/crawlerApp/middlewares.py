@@ -14,6 +14,7 @@ class CrawlerappSpiderMiddleware:
     # scrapy acts as if the spider middleware does not modify the
     # passed objects.
 
+    # To do: using defalt implementation from scrapy library
     @classmethod
     def from_crawler(cls, crawler):
         # This method is used by Scrapy to create your spiders.
@@ -21,6 +22,7 @@ class CrawlerappSpiderMiddleware:
         crawler.signals.connect(s.spider_opened, signal=signals.spider_opened)
         return s
 
+    # To do: using defalt implementation from scrapy library
     def process_spider_input(self, response, spider):
         # Called for each response that goes through the spider
         # middleware and into the spider.
@@ -28,6 +30,7 @@ class CrawlerappSpiderMiddleware:
         # Should return None or raise an exception.
         return None
 
+    # To do: using defalt implementation from scrapy library
     def process_spider_output(self, response, result, spider):
         # Called with the results returned from the Spider, after
         # it has processed the response.
@@ -36,6 +39,7 @@ class CrawlerappSpiderMiddleware:
         for i in result:
             yield i
 
+    # To do: using defalt implementation from scrapy library
     def process_spider_exception(self, response, exception, spider):
         # Called when a spider or process_spider_input() method
         # (from other spider middleware) raises an exception.
@@ -43,6 +47,7 @@ class CrawlerappSpiderMiddleware:
         # Should return either None or an iterable of Request or item objects.
         pass
 
+    # To do: using defalt implementation from scrapy library
     def process_start_requests(self, start_requests, spider):
         # Called with the start requests of the spider, and works
         # similarly to the process_spider_output() method, except
@@ -52,6 +57,7 @@ class CrawlerappSpiderMiddleware:
         for r in start_requests:
             yield r
 
+    # To do: using defalt implementation from scrapy library
     def spider_opened(self, spider):
         spider.logger.info('Spider opened: %s' % spider.name)
 
@@ -61,6 +67,7 @@ class CrawlerappDownloaderMiddleware:
     # scrapy acts as if the downloader middleware does not modify the
     # passed objects.
 
+    # To do: using defalt implementation from scrapy library
     @classmethod
     def from_crawler(cls, crawler):
         # This method is used by Scrapy to create your spiders.
@@ -68,6 +75,7 @@ class CrawlerappDownloaderMiddleware:
         crawler.signals.connect(s.spider_opened, signal=signals.spider_opened)
         return s
 
+    # To do: using defalt implementation from scrapy library
     def process_request(self, request, spider):
         # Called for each request that goes through the downloader
         # middleware.
@@ -80,6 +88,7 @@ class CrawlerappDownloaderMiddleware:
         #   installed downloader middleware will be called
         return None
 
+    # To do: using defalt implementation from scrapy library
     def process_response(self, request, response, spider):
         # Called with the response returned from the downloader.
 
@@ -89,6 +98,7 @@ class CrawlerappDownloaderMiddleware:
         # - or raise IgnoreRequest
         return response
 
+    # To do: using defalt implementation from scrapy library
     def process_exception(self, request, exception, spider):
         # Called when a download handler or a process_request()
         # (from other downloader middleware) raises an exception.
@@ -99,5 +109,6 @@ class CrawlerappDownloaderMiddleware:
         # - return a Request object: stops process_exception() chain
         pass
 
+    # To do: using defalt implementation from scrapy library
     def spider_opened(self, spider):
         spider.logger.info('Spider opened: %s' % spider.name)
