@@ -14,6 +14,8 @@ NEWSPIDER_MODULE = 'crawlerApp.spiders'
 
 DEPTH_LIMIT = 1
 
+LOG_LEVEL = 'ERROR'
+
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
 #USER_AGENT = 'crawlerApp (+http://www.yourdomain.com)'
 

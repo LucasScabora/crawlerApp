@@ -5,7 +5,6 @@
 
 import scrapy
 
-
 class CrawlerappItem(scrapy.Item):
     # Receives a link and its aquisition date
     link = scrapy.Field()
