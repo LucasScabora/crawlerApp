@@ -92,7 +92,7 @@ class dbManager:
             except Exception as ex:
                 raise dbException('Error saving URL', ex)
         else:
-            print('Unable to print URLs because database is closed')
+        	# Fail on insertion
             return -1
 
 

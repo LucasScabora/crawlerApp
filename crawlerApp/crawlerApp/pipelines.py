@@ -2,11 +2,10 @@
 
 from itemadapter          import ItemAdapter
 from scrapy.exceptions    import DropItem
-from scrapy.exceptions    import DropItem
 
 from crawlerApp.dbManager import dbManager
 
-
+# Main Pipeline Code
 class CrawlerappPipeline:	
     # Starts the spider of the crawler
     def open_spider(self, spider):
