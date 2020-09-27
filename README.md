@@ -29,6 +29,7 @@ Commentaries:
 - Using sqlite3 to store the URLs, with an indexed column with the URL hash values (MD5) to validate duplicity
 - Changed the URL processing order to BFO using: https://docs.scrapy.org/en/latest/faq.html
 - Required libs (installed with *pip*):
+
 |     lib | version |
 | ------- | ------- |
 | scrapy  | 2.3.0   |
