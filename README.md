@@ -44,31 +44,15 @@ https://pypi.org/project/scrapy-redis/
 ```
 
 1) Mount your docker instances with:
-```
-sudo docker-compose down
-sudo docker-compose build --no-cache
-sudo docker-compose up -d --force-recreate
-```
+> bash [buildContainers.sh](scrapy-docker/buildContainers.sh)
 
-2) Check the logs of your crawler with:
-```
-sudo docker logs scrapydocker_crawler_1 --follow
-```
-
-3) Feed a starting URL (to be improved and validated):
-```
-sudo docker exec -it scrapydocker_redis_1 bash
-redis-cli lpush mainSpider:start_urls https://ibm.com
-```
-
-4) Check crawler results:
-```
-redis-cli LRANGE "mainSpider:items" 0 -1
-```
+2) Feed or List URLs into Redis (use **-h** for tips):
+> python3 [manageCrawler.py](scrapy-docker/manageCrawler.py)
 
 Commentaries:
 - Currently using *DEPTH_LIMIT = 1*, which can be changed in [settings.py](scrapy-docker/crawlerApp/crawler/settings.py) file
-- Developing unit testing and interaction with Redis (feed and check)
+- Check for crawler logs with: * sudo docker logs scrapydocker_crawler_1 --follow *
 
 Future work:
+- Perform unit tests on dockers
 - Run containers in the IBM cloud
