@@ -49,10 +49,11 @@ https://pypi.org/project/scrapy-redis/
 2) Feed or List URLs into Redis (use **-h** for tips):
 > python3 [manageCrawler.py](scrapy-docker/manageCrawler.py)
 
-Commentaries:
-- Currently using *DEPTH_LIMIT = 1*, which can be changed in [settings.py](scrapy-docker/crawlerApp/crawler/settings.py) file
-- Check for crawler logs with: * sudo docker logs scrapydocker_crawler_1 --follow *
-
-Future work:
+Future works:
 - Perform unit tests on dockers
 - Run containers in the IBM cloud
+
+Commentaries:
+- Currently using *DEPTH_LIMIT = 1*, which can be changed in [settings.py](scrapy-docker/crawlerApp/crawler/settings.py) file
+- Check for crawler logs with: 
+> sudo docker logs scrapydocker_crawler_1 --follow
