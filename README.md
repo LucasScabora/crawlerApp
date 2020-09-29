@@ -1,3 +1,4 @@
+
 # Technical Test
 As a Software Analyst, I want to collect web links (URL’s) from a given initial web link (URL)
 
@@ -10,24 +11,24 @@ As a Software Analyst, I want to collect web links (URL’s) from a given initia
 
 ## Extra
 - [X] Your code needs to be integrated with git on your GitHub personal profile;
-- [X] Your code needs to contain unit testing;
+- [ ] Your code needs to contain unit testing;
 - [ ] Your code needs to be served on the IBM Cloud;
 - [ ] Your code needs to run with containers, with in IBM Cloud;
 
 
 ## Commentaries for the scrapy-single Solution (finished)
-This version (folder **scrapy-single**) is a standalone version that executes in your local machine. 
+This version (folder **scrapy-single**) is a standalone version that executes in your local machine (for learning)
 
 To run the unit test for URL and database manipulation:
-> *python3 -m unittest -v crawlerAppUnitTest.py*
+> python3 -m unittest -v [crawlerAppUnitTest.py](scrapy-single/crawlerAppUnitTest.py)
 
 And to execute the crawler, using the IBM website as a starting point:
 > scrapy crawl mainSpider -a starting_url=https://www.ibm.com/
 
 Commentaries:
-- Currently using *DEPTH_LIMIT = 1*, which can be changed in *settings.py* file.
-- Using sqlite3 to store the URLs, with an indexed column with the URL hash values (MD5) to validate duplicity
-- Changed the URL processing order to BFO using: https://docs.scrapy.org/en/latest/faq.html
+- Currently using *DEPTH_LIMIT = 1*, which can be changed in [settings.py](scrapy-single/crawlerApp/settings.py) file
+- Stores URLs in sqlite3, using an indexed column with the URL hash values (MD5) to validate duplicity
+- Process in [BFO order](https://docs.scrapy.org/en/latest/faq.html)
 - Required libs (installed with *pip*):
 
 |     lib | version |
@@ -36,8 +37,38 @@ Commentaries:
 | sqlite3 | 2.6.0   |
 
 
-## Commentaries for the scrapy-cluster Solution (in progress)
-The enhanced version (folder **scrapy-cluster**) to run with containers (docker) based on the following tutorial:
+## Commentaries for the scrapy-docker Solution (in progress)
+The enhanced version (folder **scrapy-docker**) to run with containers (docker) based on the following component:
 ```
-https://scrapy-cluster.readthedocs.io/en/latest/
+https://pypi.org/project/scrapy-redis/
 ```
+
+1) Mount your docker instances with:
+```
+sudo docker-compose down
+sudo docker-compose build --no-cache
+sudo docker-compose up -d --force-recreate
+```
+
+2) Check the logs of your crawler with:
+```
+sudo docker logs scrapydocker_crawler_1 --follow
+```
+
+3) Feed a starting URL (to be improved and validated):
+```
+sudo docker exec -it scrapydocker_redis_1 bash
+redis-cli lpush mainSpider:start_urls https://ibm.com
+```
+
+4) Check crawler results:
+```
+redis-cli LRANGE "mainSpider:items" 0 -1
+```
+
+Commentaries:
+- Currently using *DEPTH_LIMIT = 1*, which can be changed in [settings.py](scrapy-docker/crawlerApp/crawler/settings.py) file
+- Developing unit testing and interaction with Redis (feed and check)
+
+Future work:
+- Run containers in the IBM cloud
