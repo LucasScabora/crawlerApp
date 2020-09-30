@@ -28,7 +28,7 @@ The enhanced version (folder **scrapy-docker**) to run with containers (docker) 
 https://pypi.org/project/scrapy-redis/
 ```
 
-1) Mount your docker instances with (with unit test):
+1) Mount your docker instances (with unit test):
 > bash [buildContainers.sh](scrapy-docker/buildContainers.sh)
 
 2) Feed or List URLs into Redis (use **-h** for tips):
