@@ -2,20 +2,6 @@
 # Technical Test
 As a Software Analyst, I want to collect web links (URL’s) from a given initial web link (URL)
 
-## Requirements
-- [X] The app needs to receive an URL;
-- [X] The app needs to find all links inside this given URL;
-- [X] The app needs to save these links found in the database (SQL or No-SQL)
-- [X] The app needs to list these links saved in the database.
-- [X] After collecting all links from the initial URL. Collect from the newly found links. 
-
-## Extra
-- [X] Your code needs to be integrated with git on your GitHub personal profile;
-- [X] Your code needs to contain unit testing;
-- [ ] Your code needs to be served on the IBM Cloud;
-- [ ] Your code needs to run with containers, with in IBM Cloud;
-
-
 ## Commentaries for the scrapy-single Solution (finished)
 This version (folder **scrapy-single**) is a standalone version that executes in your local machine (for learning)
 
@@ -47,9 +33,6 @@ https://pypi.org/project/scrapy-redis/
 
 2) Feed or List URLs into Redis (use **-h** for tips):
 > python3 [manageCrawler.py](scrapy-docker/manageCrawler.py)
-
-Future works:
-- Run containers in the IBM cloud
 
 Commentaries:
 - Currently using *DEPTH_LIMIT = 1*, which can be changed in [settings.py](scrapy-docker/crawlerApp/crawler/settings.py) file

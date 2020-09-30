@@ -13,7 +13,6 @@ NEWSPIDER_MODULE = 'crawler.spiders'
 
 # For debugging
 LOG_LEVEL   = 'DEBUG'
-DEPTH_LIMIT = 1
 
 # General configuration for scrapy-redis lib
 USER_AGENT            = "scrapy-redis"
