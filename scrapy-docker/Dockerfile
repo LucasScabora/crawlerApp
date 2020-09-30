@@ -17,7 +17,6 @@ RUN pip3 install --no-cache-dir -r requirements.txt
 # Mode crawler code to VM
 COPY crawlerApp /usr/src/app
 
-# Run unit test (TO DO)
-
+# Starts default crawler
 ENTRYPOINT ["scrapy"]
 CMD ["crawl", "mainSpider"]
