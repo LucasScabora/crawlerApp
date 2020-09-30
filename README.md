@@ -22,7 +22,7 @@ Commentaries:
 | sqlite3 | 2.6.0   |
 
 
-## Commentaries for the scrapy-docker Solution (in progress)
+## Commentaries for the scrapy-docker Solution (finished)
 The enhanced version (folder **scrapy-docker**) to run with containers (docker) based on the following component:
 ```
 https://pypi.org/project/scrapy-redis/
@@ -34,7 +34,5 @@ https://pypi.org/project/scrapy-redis/
 2) Feed or List URLs into Redis (use **-h** for tips):
 > python3 [manageCrawler.py](scrapy-docker/manageCrawler.py)
 
-Commentaries:
-- Currently using *DEPTH_LIMIT = 1*, which can be changed in [settings.py](scrapy-docker/crawlerApp/crawler/settings.py) file
 - Check for crawler logs with: 
 > sudo docker logs scrapydocker_crawler_1 --follow
