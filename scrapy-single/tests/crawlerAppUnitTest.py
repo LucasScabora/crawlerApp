@@ -1,6 +1,10 @@
 import os
 import unittest
 
+# Adds higher directory to python modules path
+import sys
+sys.path.append("..")
+
 from crawlerApp.dbManager import dbManager
 from datetime             import datetime
 

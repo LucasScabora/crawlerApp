@@ -14,8 +14,11 @@ WORKDIR /usr/src/app
 COPY crawlerApp/requirements.txt /usr/src/app/
 RUN pip3 install --no-cache-dir -r requirements.txt
 
-# Mode crawler code to VM
+# Move crawler code to container
 COPY crawlerApp /usr/src/app
+
+# Move unit test to container
+COPY tests /usr/src/app
 
 # Starts default crawler
 ENTRYPOINT ["scrapy"]
