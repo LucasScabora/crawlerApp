@@ -12,7 +12,7 @@ And to execute the crawler, using the IBM website as a starting point:
 > scrapy crawl mainSpider -a starting_url=https://www.ibm.com/
 
 Commentaries:
-- Currently using *DEPTH_LIMIT = 1*, which can be changed in [settings.py](scrapy-single/crawlerApp/settings.py) file
+- Currently using *DEPTH_LIMIT = 1*, in which it can be changed in [settings.py](scrapy-single/crawlerApp/settings.py) file
 - Stores URLs in sqlite3, using an indexed column with the URL hash values (MD5) to validate duplicity
 - Required libs (installed with *pip*):
 
@@ -35,4 +35,4 @@ https://pypi.org/project/scrapy-redis/
 > python3 [manageCrawler.py](scrapy-docker/manageCrawler.py)
 
 - Check for crawler logs with: 
-> sudo docker logs scrapydocker_crawler_1 --follow
+> docker logs scrapydocker_crawler_1 --follow
